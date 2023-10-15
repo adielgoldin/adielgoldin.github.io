@@ -123,14 +123,18 @@ function showModal(event, modalId, imgSrc) {
 
 
 function openModal(modalID) {
-	modal = document.getElementById(modalID)
-	modal.style.display = "flex";
+    var modal = document.getElementById(modalID);
+    if (modal) {
+        modal.style.display = "flex";
+    } else {
+        console.error("Modal with ID '" + modalID + "' not found.");
+    }
 }
 
 function closeAllModal() {
-	var modals = document.getElementsByClassName("modal");
-	for(i=0; i<modals.length; i++) {
-		modals[i].style.display = "none"
+    var modals = document.getElementsByClassName("modal");
+    for (var i = 0; i < modals.length; i++) {
+        modals[i].style.display = "none";
 	}
 }
 
